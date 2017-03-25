@@ -2,20 +2,28 @@ package test;
 
 public class Checkingaccount extends Account {
 	double credit_limit , interest , loan_interest;
-	Checkingaccount(double balance, double credit_limit, double interest, double loan_interest) {
-	super(balance);
+	Checkingaccount() {
+	super(100);
 	this.credit_limit = 500;
-	this.interest = 0.1f;
+	this.interest = 0.01f;
 	this.loan_interest = 0.07f;
 	}
-	
 
-	public void debit() {
-		//if (a.a1 == 0 || a.a2 == 0){
-			System.out.println("출금불가");
+	public void debit(double b) {
+		if (b >= credit_limit ){
+			System.out.println("출금 한도 초과");
+			getBalance();
+		} else if (b > getBalance()) {
+			System.out.println("잔액이 0원 미만입니다");
+			setBalance(b);
+		} else {
+			setBalance(b);
 		}
-	public void nextMonth() {
-		
 	}
-	
+	public double nextMonth() {	
+		if (getBalance() >= 0){			
+		return getBalance() + getBalance() * interest;
+	} else {
+		return  getBalance() + getBalance()*loan_interest;
+	}	}	
 }

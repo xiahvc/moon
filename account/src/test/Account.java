@@ -1,23 +1,15 @@
 package test;
 
 public class Account {
-	double  balance;
-	public Account (double b) {
-		this.balance = b;
+	private double balance;
+	Account (double b) {
+		balance = b;
 	}
 
-	public void credit(int a) {               //입금
-		balance += a;
+	public void credit(double a) {balance += a;}
+	public double getBalance(){return balance;}
+	public void debit(double b) { balance -= b;}
+	protected void setBalance(double b) {
+		balance -= b;
 	}
-	public double getBalance() {			      //잔고확인
-		return balance;
-	}
-	public void debit(int b) {	
-		balance -= b;						  //출금
-
-	}
-	protected void setBalance() {
-		
-	}
-
 }
