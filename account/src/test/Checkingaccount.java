@@ -1,6 +1,6 @@
 package test;
 
-public class Checkingaccount extends Account {
+public class Checkingaccount extends Account implements Valuable {
 	double credit_limit , interest , loan_interest;
 	
 	Checkingaccount(double balance , double credit_limit , double interest , double loan_interest) {
@@ -47,4 +47,12 @@ public class Checkingaccount extends Account {
 		}
 		return c;
 	}
+	public double EstimateValue (int month) {
+		double b =0;
+		b = getBalance() + getBalance()*month*interest;
+		return b;
+	}
+	public String toString(){
+		return String.format("CheckingAccount_Balance : %f" , getBalance());
+		}
 }

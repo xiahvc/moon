@@ -1,6 +1,6 @@
 package test;
 
-public class SavingAccount extends Account {
+public class SavingAccount extends Account implements Valuable {
 	double interest;
 	int b = 0;
 	boolean tic = false;
@@ -31,5 +31,13 @@ public class SavingAccount extends Account {
 	}
 	public double getWithdrawableAccount() {
 			return getBalance();
+		}
+	public double EstimateValue (int month) {
+		double b =0;
+		b = getBalance() + getBalance()*month*interest;
+		return b;
+	}
+	public String toString(){
+		return String.format("SavingAccount_Balance : %f" , getBalance());
 		}
 	}
