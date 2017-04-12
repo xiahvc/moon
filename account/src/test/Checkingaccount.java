@@ -10,16 +10,16 @@ public class Checkingaccount extends Account implements Valuable {
 	this.loan_interest = loan_interest;
 	}
 
-	public void debit(double b) {
-	/**	if (b >= credit_limit ){
-			System.out.println("출금 한도 초과");
-			getBalance();
-		} else if (b > getBalance()) {
-			System.out.println("잔액이 0원 미만입니다");
-			setBalance(getBalance()-b);
-		} else {**/
+	public void debit(double b) throws Exception {
+		if (b > credit_limit ){
+			// System.out.println("출금 한도 초과");
+			throw new Exception();		
+		} else if (b < 0) {
+			throw new Exception();
+		} else {
 			setBalance(getBalance()-b);
 		}
+	}
 	public double nextMonth() {	
 		if (getBalance() >= 0){			
 		return getBalance() + getBalance() * interest;

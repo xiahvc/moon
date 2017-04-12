@@ -10,12 +10,14 @@ public class SavingAccount extends Account implements Valuable {
 		this.interest = interest;
 	}
 	
-	public void debit(double d){
-		if (tic == true) {
-			System.out.println("아직출금할수없습니다!");
-			
-		} else{
-			setBalance(getBalance() - d);
+	public void debit(double d) throws Exception {
+		if (d >= getBalance() ){
+			// System.out.println("출금 한도 초과");
+			throw new Exception("dlrj");		
+		} else if (d < 0) {
+			throw new Exception();
+		} else {
+			setBalance(getBalance()-d);
 		}
 	}
 	//추상메소드구현
