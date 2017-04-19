@@ -12,4 +12,8 @@ public abstract class Account {
 	protected void setBalance(double b) {balance = b;}
 	public abstract double getWithdrawableAccount();
 	public abstract void passTime(int a);
+	public abstract void passTime();
+	public abstract double EstimateValue (int month);
+	public abstract double EstimateValue ();
+
 }

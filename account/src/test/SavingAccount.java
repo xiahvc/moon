@@ -42,4 +42,19 @@ public class SavingAccount extends Account implements Valuable {
 	public String toString(){
 		return String.format("SavingAccount_Balance : %f" , getBalance());
 		}
+	public double EstimateValue () {
+		double b =0;
+		b = getBalance() + getBalance()*1*interest;
+		return b;
 	}
+	public void passTime(){
+		tic = true;
+	
+		if (b < 12) {
+			b += 1;
+		} else {
+			setBalance(getBalance() * Math.pow(1 + interest,b));
+			tic = false;
+		}
+	}
+}

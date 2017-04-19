@@ -13,4 +13,7 @@ public String toString(){
 public double EstimateValue (int month) {
 	return Double.POSITIVE_INFINITY;
 }
+public double EstimateValue () {
+	return Double.POSITIVE_INFINITY;
+}
 }

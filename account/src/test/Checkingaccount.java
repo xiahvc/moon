@@ -55,4 +55,13 @@ public class Checkingaccount extends Account implements Valuable {
 	public String toString(){
 		return String.format("CheckingAccount_Balance : %f" , getBalance());
 		}
+    
+	public double EstimateValue() {
+		double b =0;
+		b = getBalance() + getBalance()*1*interest;
+		return b;
+		}
+	public void passTime (){
+		setBalance(getBalance() + getBalance() * loan_interest * 1);
+	}
 }

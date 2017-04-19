@@ -17,4 +17,11 @@ public class Car implements Valuable{
 		b = (double)a - month*a*1/100;
 		return b;
 	}
+	public double EstimateValue () {
+		double a = 0;
+		double b = 0;
+		a = price - (price*20/100);
+		b = (double)a - 1*a*1/100;
+		return b;
+	}
 }
